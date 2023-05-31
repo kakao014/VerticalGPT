@@ -11,12 +11,6 @@ export default function HomePage() {
 
   return (
     <main className="">
-      <h1>test test</h1>
-          <Link href="/upload">
-                blog
-            </Link>
-        <br/>
-            <br/>
       <Hero />
       <Features />
     </main>
