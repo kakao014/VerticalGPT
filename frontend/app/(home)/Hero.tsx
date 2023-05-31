@@ -38,13 +38,13 @@ const Hero: FC = () => {
         className="top-24 -z-0 flex flex-col gap-2 items-center justify-center pt-24"
       >
         <h1 className="text-5xl sm:text-7xl font-bold max-w-lg sm:max-w-xl">
-          Get a Second Brain with <span className="text-primary">Quivr</span>
+          创意搭档,AI相伴 <span className="text-primary">Aibeson</span>
         </h1>
         <p className="text-base max-w-sm text-gray-500 mb-5 sm:mb-10">
-          Quivr is your second brain in the cloud, designed to easily store and
-          retrieve unstructured information.
+          Create beyond limits with Ai.
         </p>
-        <Link href={"https://try-quivr.streamlit.app"}>
+        {/*<Link href={"https://try-quivr.streamlit.app"}>*/}
+        <Link href={"/upload"}>
           <Button>Try Demo</Button>
         </Link>
         <Link target="_blank" href={"https://github.com/StanGirard/quivr/"}>
