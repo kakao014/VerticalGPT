@@ -34,7 +34,7 @@ const NavItems: FC<NavItemsProps> = ({ className, setOpen, ...props }) => {
         </>
       ) : (
         <>
-          <NavLink setOpen={setOpen} to="https://github.com/StanGirard/Aibeson">
+          <NavLink setOpen={setOpen} to="">
             Github
           </NavLink>
           <NavLink setOpen={setOpen} to=" ">
