@@ -43,24 +43,25 @@ const Hero: FC = () => {
         <p className="text-base max-w-sm text-gray-500 mb-5 sm:mb-10">
           Create beyond limits with Ai.
         </p>
-        {/*<Link href={"https://try-quivr.streamlit.app"}>*/}
-        <Link href={"/upload"}>
+        <Link href={"http://unicloud.couplefish.com/"}>
+        {/*<Link href={"/upload"}>*/}
           <Button>Try Demo</Button>
         </Link>
-        <Link target="_blank" href={"https://github.com/StanGirard/quivr/"}>
-          <Button variant={"tertiary"}>
-            Github <MdNorthEast />
-          </Button>
-        </Link>
+
+        {/*<Link target="_blank" href={"https://github.com/StanGirard/Aibeson/"}>*/}
+        {/*  <Button variant={"tertiary"}>*/}
+        {/*    Github <MdNorthEast />*/}
+        {/*  </Button>*/}
+        {/*</Link>*/}
       </motion.div>
-      <motion.video
-        style={{ scale: videoScale }}
-        className="rounded-md max-w-screen-lg shadow-lg dark:shadow-white/25 border dark:border-white/25 w-full bg-white dark:bg-black"
-        src="https://user-images.githubusercontent.com/19614572/238774100-80721777-2313-468f-b75e-09379f694653.mp4"
-        autoPlay
-        muted
-        loop
-      />
+      {/*<motion.video*/}
+      {/*  style={{ scale: videoScale }}*/}
+      {/*  className="rounded-md max-w-screen-lg shadow-lg dark:shadow-white/25 border dark:border-white/25 w-full bg-white dark:bg-black"*/}
+      {/*  src="https://user-images.githubusercontent.com/19614572/238774100-80721777-2313-468f-b75e-09379f694653.mp4"*/}
+      {/*  autoPlay*/}
+      {/*  muted*/}
+      {/*  loop*/}
+      {/*/>*/}
     </section>
   );
 };

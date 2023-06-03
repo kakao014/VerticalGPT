@@ -1,4 +1,3 @@
-"use client";
 import { useSupabase } from "@/app/supabase-provider";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -13,7 +12,6 @@ interface NavItemsProps extends HTMLAttributes<HTMLUListElement> {
 const NavItems: FC<NavItemsProps> = ({ className, setOpen, ...props }) => {
   const { session } = useSupabase();
   const isUserLoggedIn = session?.user !== undefined;
-  const isLocal = process.env.NEXT_PUBLIC_ENV === "local";
   return (
     <ul
       className={cn(
@@ -22,7 +20,7 @@ const NavItems: FC<NavItemsProps> = ({ className, setOpen, ...props }) => {
       )}
       {...props}
     >
-      {isLocal ? (
+      {process.env.NEXT_PUBLIC_ENV === "local" ? (
         <>
           <NavLink setOpen={setOpen} to="/upload">
             Upload
@@ -36,26 +34,25 @@ const NavItems: FC<NavItemsProps> = ({ className, setOpen, ...props }) => {
         </>
       ) : (
         <>
-          <NavLink setOpen={setOpen} to="https://github.com/StanGirard/quivr">
+          <NavLink setOpen={setOpen} to="https://github.com/StanGirard/Aibeson">
             Github
           </NavLink>
-          <NavLink setOpen={setOpen} to="https://discord.gg/HUpRgp2HG8">
+          <NavLink setOpen={setOpen} to=" ">
             Discord
           </NavLink>
         </>
       )}
       <div className="flex sm:flex-1 sm:justify-end flex-col items-center justify-center sm:flex-row gap-5 sm:gap-2">
+        <Link href={"http://unicloud.couplefish.com/"}>
+        {/*<Link href={"https://try-Aibeson.streamlit.app"}>*/}
+          <Button variant={"secondary"}>Try Demo</Button>
+        </Link>
+        <DarkModeToggle />
         {isUserLoggedIn && (
           <Link href={"/logout"}>
             <Button variant={"secondary"}>Logout</Button>
           </Link>
         )}
-        {!isLocal && (
-          <Link href={"https://try-quivr.streamlit.app"}>
-            <Button variant={"secondary"}>Try Demo</Button>
-          </Link>
-        )}
-        <DarkModeToggle />
       </div>
     </ul>
   );

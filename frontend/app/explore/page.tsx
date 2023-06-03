@@ -1,6 +1,6 @@
 "use client";
 import axios from "axios";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -41,12 +41,12 @@ export default function ExplorePage() {
       setIsPending(false);
     };
     fetchDocuments();
-  }, [session.access_token]);
+  }, []);
 
   return (
     <main>
       <section className="w-full outline-none pt-32 flex flex-col gap-5 items-center justify-center p-6">
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center my-10">
           <h1 className="text-3xl font-bold text-center">
             Explore uploaded data
           </h1>
@@ -57,9 +57,9 @@ export default function ExplorePage() {
         {isPending ? (
           <Spinner />
         ) : (
-          <motion.div layout className="w-full max-w-xl flex flex-col gap-5">
+          <div className="w-full max-w-xl flex flex-col gap-5">
             {documents.length !== 0 ? (
-              <AnimatePresence mode="popLayout">
+              <AnimatePresence>
                 {documents.map((document) => (
                   <DocumentItem
                     key={document.name}
@@ -76,7 +76,7 @@ export default function ExplorePage() {
                 </Link>
               </div>
             )}
-          </motion.div>
+          </div>
         )}
       </section>
     </main>

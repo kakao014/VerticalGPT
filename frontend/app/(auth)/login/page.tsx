@@ -7,10 +7,12 @@ import PageHeading from "@/app/components/ui/PageHeading";
 import { useSupabase } from "@/app/supabase-provider";
 import { useToast } from "@/lib/hooks/useToast";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { GoogleLoginButton } from "./components/GoogleLogin";
 import { MagicLinkLogin } from "./components/MagicLinkLogin";
+
+
 
 export default function Login() {
   const { supabase, session } = useSupabase();
@@ -20,9 +22,14 @@ export default function Login() {
 
   const { publish } = useToast();
 
+  const router = useRouter();
+
+
+
   const handleLogin = async () => {
     setIsPending(true);
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { data, error } =
+        await supabase.auth.signInWithPassword({
       email: email,
       password: password,
     });
@@ -42,7 +49,7 @@ export default function Login() {
   };
 
   if (session?.user !== undefined) {
-    redirect("/");
+    router.replace("/");
   }
 
   return (

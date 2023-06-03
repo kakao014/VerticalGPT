@@ -38,12 +38,12 @@ const NavBar: FC = () => {
         <Link href={"/"} className="flex items-center gap-4">
           <Image
             className="rounded-full"
-            src={"/logo.png"}
-            alt="Quivr Logo"
+            src={"/logoCircle.svg"}
+            alt="Logo"
             width={48}
             height={48}
           />
-          <h1 className="font-bold">Quivr</h1>
+          <h1 className="font-bold">Aibeson</h1>
         </Link>
         <NavItems className="hidden sm:flex" />
         <MobileMenu />

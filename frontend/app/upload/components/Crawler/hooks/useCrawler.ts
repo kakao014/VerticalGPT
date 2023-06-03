@@ -61,7 +61,7 @@ export const useCrawler = () => {
     } finally {
       setCrawling(false);
     }
-  }, [session.access_token, publish]);
+  }, [session.access_token]);
 
   return {
     isCrawling,
